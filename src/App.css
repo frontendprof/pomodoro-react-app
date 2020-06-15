@@ -12,3 +12,35 @@ h2{
     font-size: 4rem;
     font-weight: 400;
 }
+
+h4{
+    text-align: center;
+    font-size:1.8rem;
+    font-weight: 300;
+}
+
+.int-cont{
+    display: flex;
+    margin:0 50px;
+    align-items: center;
+}
+
+.int-cont-main{
+    display: flex;
+}
+
+button{
+    padding:5px 12px;
+    margin:0 10px;
+    height: 30x;
+    background-color: lightblue;
+    border:none;
+    outline:none;
+    cursor: pointer;
+    color:rgb(241, 31, 16);
+}
+
+.int-len{
+    font-size:2rem;
+    margin:0 10px;
+}
