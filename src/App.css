@@ -11,12 +11,17 @@
 h2{
     font-size: 4rem;
     font-weight: 400;
+    color:rgb(152, 220, 243);
+    box-shadow: 2px 4px 5px rgb(26, 175, 224);
 }
 
 h4{
     text-align: center;
     font-size:1.8rem;
     font-weight: 300;
+    margin-top: 0;
+    margin-bottom:25px;
+    color:rgb(18, 168, 218);
 }
 
 .int-cont{
@@ -43,4 +48,18 @@ button{
 .int-len{
     font-size:2rem;
     margin:0 10px;
+}
+
+.timer-cont{
+    border:2px solid lightblue;
+    margin-top:40px;
+    border-radius: 25px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 4px rgb(26, 175, 224);
+    padding: 10px;
+}
+
+.timer-ses{
+    font-size: 2rem;
 }
