@@ -1,0 +1,14 @@
+
+.main{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    min-height: 90vh;
+}
+
+
+h2{
+    font-size: 4rem;
+    font-weight: 400;
+}

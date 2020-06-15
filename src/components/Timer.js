@@ -7,7 +7,6 @@ class Timer extends Component {
     
         this.state = {
             isSession:true,
-            timerMinute:0,
             timerSecond:0
              
         }
@@ -21,7 +20,11 @@ class Timer extends Component {
                     <h4>{this.state.isSession?"Session":"Break"}</h4>
                     <span>{this.props.timerMinute}</span>
                     <span>:</span>
-                    <span>{this.props.timerSecond}</span>
+                    <span>{this.state.timerSecond===0 
+                    ? "00" 
+                    :this.state.timerSecond<10
+                    ?"0"+this.state.timerSecond
+                    :this.state.timerSecond}</span>
 
                 </section>
                 
