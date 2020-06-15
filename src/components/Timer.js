@@ -27,6 +27,12 @@ class Timer extends Component {
                     :this.state.timerSecond}</span>
 
                 </section>
+
+                <section className="timer-action">
+                    <button>Play</button>
+                    <button>Stop</button>
+                    <button>Refresh</button>
+                </section>
                 
             </section>
         )

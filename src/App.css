@@ -35,7 +35,7 @@ h4{
 }
 
 button{
-    padding:5px 12px;
+    padding:5px 10px;
     margin:0 10px;
     height: 30x;
     background-color: lightblue;
@@ -43,6 +43,8 @@ button{
     outline:none;
     cursor: pointer;
     color:rgb(241, 31, 16);
+    width: 70px;
+    border-radius: 5px;
 }
 
 .int-len{
@@ -56,10 +58,15 @@ button{
     border-radius: 25px;
     width: 250px;
     text-align: center;
-    box-shadow: 0 4px 4px rgb(26, 175, 224);
+    box-shadow: 0 2px 4px rgb(26, 175, 224);
     padding: 10px;
 }
 
 .timer-ses{
     font-size: 2rem;
+}
+
+.timer-action{
+    margin-top: 25px;
+    text-align: center;
 }
