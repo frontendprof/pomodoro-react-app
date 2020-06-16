@@ -4,6 +4,8 @@ import BreakInterval from "./BreakInterval";
 import SessionLength from './SessionLength';
 import Timer from "./Timer";
 
+
+
 class App extends React.Component{
 
   constructor(){
@@ -19,12 +21,18 @@ class App extends React.Component{
     this.onDecreaseBreakLength=this.onDecreaseBreakLength.bind(this);
     this.onIncreaseSessionLength=this.onIncreaseSessionLength.bind(this);
     this.onDecreaseSessionLength=this.onDecreaseSessionLength.bind(this);
+    this.onUpdateTimerMinute=this.onUpdateTimerMinute.bind(this);
+    this.onToggleInterval=this.onToggleInterval.bind(this);
+    this.onResetTimer=this.onResetTimer.bind(this);
   }
 
 
   onIncreaseBreakLength(){
     this.setState(prevState=>{
-      return {breakLength:prevState.breakLength+1}
+      return {
+        breakLength:prevState.breakLength+1
+        
+      }
     })
   }
 
@@ -36,14 +44,48 @@ class App extends React.Component{
 
   onIncreaseSessionLength(){
     this.setState(prevState=>{
-      return {sessionLength:prevState.sessionLength+1}
+      return {
+        sessionLength:prevState.sessionLength+1,
+        timerMinute:prevState.sessionLength+1
+      }
     })
   }
 
 
   onDecreaseSessionLength(){
     this.setState(prevState=>{
-      return {sessionLength:prevState.sessionLength-1}
+      return {
+        sessionLength:prevState.sessionLength-1,
+        timerMinute:prevState.sessionLength-1
+      }
+    })
+  }
+
+  onUpdateTimerMinute(){
+    this.setState(prevState=>{
+      return {
+        timerMinute:prevState.timerMinute-1
+      }
+    })
+  }
+
+
+  onToggleInterval(isSession){
+    if(isSession){
+      this.setState({
+        timerMinute:this.state.sessionLength
+      })
+    }else{
+      this.setState({
+        timerMinute:this.state.breakLength
+      })
+    }
+  }
+
+
+  onResetTimer(){
+    this.setState({
+      timerMinute:this.state.sessionLength
     })
   }
 
@@ -63,7 +105,13 @@ class App extends React.Component{
         decreaseSession={this.onDecreaseSessionLength} />  
       </section>
       
-      <Timer timerMinute={this.state.timerMinute} />
+      <Timer 
+      timerMinute={this.state.timerMinute}
+      breakLength={this.state.breakLength}
+      updateTimerMinute={this.state.onUpdateTimerMinute}
+      toggleInterval={this.state.onToggleInterval}
+      resetTimer={this.state.onResetTimer}
+       />
     </div>
   );
 
