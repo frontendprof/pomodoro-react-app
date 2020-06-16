@@ -1,6 +1,27 @@
 import React from 'react'
 
 function SessionLength(props) {
+
+
+    function increaseSession(){
+        if(props.sessionLength===60){
+            return;
+        }
+        props.increaseSession();
+    }
+
+
+    function decreaseSession(){
+        if(props.sessionLength===1){
+            return;
+        }
+        props.decreaseSession();
+    }
+
+
+
+
+
     return (
         <div>
 
@@ -8,9 +29,9 @@ function SessionLength(props) {
                 <h4>Session Length</h4>
                 
                 <section className="int-cont">
-                <button>Down</button>
+                <button onClick={decreaseSession}>Down</button>
                 <p className="int-len">{props.sessionLength}</p>
-                <button>Up</button>
+                <button onClick={increaseSession}>Up</button>
                 </section>
 
             </section>

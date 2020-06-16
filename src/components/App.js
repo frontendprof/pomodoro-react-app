@@ -17,6 +17,8 @@ class App extends React.Component{
 
     this.onIncreaseBreakLength=this.onIncreaseBreakLength.bind(this);
     this.onDecreaseBreakLength=this.onDecreaseBreakLength.bind(this);
+    this.onIncreaseSessionLength=this.onIncreaseSessionLength.bind(this);
+    this.onDecreaseSessionLength=this.onDecreaseSessionLength.bind(this);
   }
 
 
@@ -32,6 +34,19 @@ class App extends React.Component{
     })
   }
 
+  onIncreaseSessionLength(){
+    this.setState(prevState=>{
+      return {sessionLength:prevState.sessionLength+1}
+    })
+  }
+
+
+  onDecreaseSessionLength(){
+    this.setState(prevState=>{
+      return {sessionLength:prevState.sessionLength-1}
+    })
+  }
+
 
 
   render(){
@@ -43,7 +58,9 @@ class App extends React.Component{
         increaseBreak={this.onIncreaseBreakLength}
         decreaseBreak={this.onDecreaseBreakLength}
         />
-        <SessionLength sessionLength={this.state.sessionLength} />  
+        <SessionLength sessionLength={this.state.sessionLength}
+        increaseSession={this.onIncreaseSessionLength}
+        decreaseSession={this.onDecreaseSessionLength} />  
       </section>
       
       <Timer timerMinute={this.state.timerMinute} />
